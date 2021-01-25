@@ -7,6 +7,15 @@
 body {
     margin: 0;
     line-height: 1.2;
-    /* font */
     font-family: Montserrat, monospace;
+    background: black;
+}
+
+.canvas-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

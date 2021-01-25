@@ -1,14 +1,19 @@
 export default class Entity {
-    constructor(name, x, y, char, color) {
-        this.name = name;
-        this.x = x;
-        this.y = y;
-        this.char = char; 
-        this.color = color;
+    constructor(options) {
+        this.name = options.name;
+        this.char = options.char;
+        this.color = options.color;
+        this.x = options.x;
+        this.y = options.y;
+
     }
 
     move(dx, dy) {
         this.x += dx;
         this.y += dy;
+    }
+
+    isSolid(x, y, map) {
+        return map[`${x},${y}`].solid;
     }
 }

@@ -1,4 +1,4 @@
-const colors = {
+export default {
     BLACK: 'rgb(0,0,0)',
     DARKEST_GREY: 'rgb(31,31,31)',
     DARKER_GREY: 'rgb(63,63,63)',
@@ -197,5 +197,3 @@ const colors = {
     CELADON: 'rgb(172,255,175)',
     PEACH: 'rgb(255,159,127)',
 };
-
-export default colors;

@@ -1,24 +1,22 @@
+import colors from "../data/colors";
 import Entity from "./Entity";
 
 export default class Player extends Entity {
-    constructor(update, name, x, y, char, color) {
-        super(name, x, y, char, color);
-        this.updateEngine = update
-        this.initMovement(update)
-    }
+    constructor(options, update) {
+        options.char = '@';
+        options.color = colors.WHITE;
+        super(options)
 
-    initMovement() {
         window.addEventListener('keydown', (e) => {
-            const action = this.$handleKeyDown(e.code);
+            const action = this.keyHandler(e.code);
             if( action ) {
-              this.updateEngine(action);
+                update(action);
             }
         })
     }
 
-    $handleKeyDown(code) {
+    keyHandler(code) {
         const directions = [ [-1,-1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0] ];
-
 
         const vim = [ 'KeyY', 'KeyK', 'KeyU', 'KeyL', 'KeyN', 'KeyJ', 'KeyB', 'KeyH' ];
         const numPad = [ 'Numpad7', 'Numpad8', 'Numpad9', 'Numpad6', 'Numpad3', 'Numpad2', 'Numpad1', 'Numpad4' ];
